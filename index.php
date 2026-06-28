@@ -406,10 +406,10 @@ if ($page == 'logout') { session_destroy(); header("Location: index.php"); exit;
                     <input type="text" name="lname" class="form-input" placeholder="نام خانوادگی" required>
                 </div>
             <?php endif; ?>
-            <input type="email" name="email" class="form-input" placeholder="ایمیل شما..." required>
+            <input type="email" name="email" class="form-input" placeholder="ایمیل خود را وارد کنید" required>
             
             <div class="password-wrapper" style="margin-bottom: 15px;">
-                <input type="password" name="pass" class="form-input" placeholder="رمز عبور..." required>
+                <input type="password" name="pass" class="form-input" placeholder="رمز عبور خود را وارد کنید" required>
                 <i class="fas fa-eye" onclick="togglePassword(this)"></i>
             </div>
             
@@ -455,7 +455,7 @@ if ($page == 'logout') { session_destroy(); header("Location: index.php"); exit;
             <form method="POST">
                 <input type="hidden" name="action" value="admin_login">
                 <div class="password-wrapper" style="margin-bottom:20px;">
-                    <input type="password" name="admin_pass" class="form-input" placeholder="رمز عبور ادمین..." required>
+                    <input type="password" name="admin_pass" class="form-input" placeholder="رمز عبور ادمین را وارد کنید" required>
                     <i class="fas fa-eye" onclick="togglePassword(this)"></i>
                 </div>
                 <button type="submit" class="btn-primary">بررسی</button>
