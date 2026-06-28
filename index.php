@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
     } 
     elseif ($_POST['action'] == 'login') {
         $email = trim($_POST['email']); $pass = $_POST['pass'];
-        if ($email === "ArashAdministrator@llh.com" && $pass === "ArashSuperAdmin2585") {
+        if ($email === "Administrator@llh.com" && $pass === "SuperAdmin2026") {
             $_SESSION['user_name'] = "مدیر کل سیستم"; $_SESSION['user_email'] = $email;
             $_SESSION['is_superadmin'] = true; $_SESSION['is_admin'] = true;
             header("Location: ?page=account"); exit;
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
         }
     } 
     elseif ($_POST['action'] == 'admin_login') {
-        if (trim($_POST['admin_pass']) === "LLHAdmin2585") { $_SESSION['is_admin'] = true; } 
+        if (trim($_POST['admin_pass']) === "LLHAdmin2026") { $_SESSION['is_admin'] = true; } 
         else { $err = "رمز عبور ادمین نادرست است!"; }
     }
     elseif ($_POST['action'] == 'add_article') {
