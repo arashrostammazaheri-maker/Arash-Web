@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Learn Hardware - PC Case</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body style="justify-content: flex-start;">
+
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="text-purple">LLH</span> <span class="text-orange">PC Case</span>
+            </h1>
+        </a>
+    </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
+
+<main class="main-wrapper" style="justify-content: flex-start;">
+    <div class="container" style="padding: 0 20px;">
+        <p style="text-align: center; font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px;">موس خود را روی قطعات داخل کیس ببرید یا روی آنها کلیک کنید.</p>
+        <div class="hardware-layout">
+            <div class="case-wrapper">
+                <div class="pc-case-mock">
+                    <a href="component.html?type=motherboard" class="hardware-spot spot-mobo" data-title="مادربرد (Motherboard)" data-desc="برد اصلی کامپیوتر که تمامی قطعات را به هم متصل می کند.">
+                        <span style="font-size:0.85rem; color:#1e3799; font-weight:bold; position:absolute; top:8px; right:10px;"><i class="fas fa-server"></i> MotherBoard</span>
+                    </a>
+                    <a href="component.html?type=cpu" class="hardware-spot spot-cpu" data-title="پردازنده (CPU)" data-desc="مغز متفکر و محاسباتی کامپیوتر."><span><i class="fas fa-microchip"></i> CPU</span></a>
+                    <a href="component.html?type=ram" class="hardware-spot spot-ram" data-title="حافظه موقت (RAM)" data-desc="محل ذخیره‌سازی موقت داده‌های زنده سیستم."><span style="writing-mode: vertical-rl;"><i class="fas fa-memory"></i> RAM</span></a>
+                    <a href="component.html?type=storage" class="hardware-spot spot-ssd" data-title="حافظه پرسرعت (M.2 SSD)" data-desc="محل ذخیره‌سازی دائمی اطلاعات با سرعت فوق العاده بالا."><span><i class="fas fa-hdd"></i> M.2 SSD</span></a>
+                    <a href="component.html?type=gpu" class="hardware-spot spot-gpu" data-title="کارت گرافیک (GPU)" data-desc="مسئول تولید و رندر کردن تصاویر."><span><i class="fas fa-vr-cardboard"></i> GPU / VGA</span></a>
+                    <a href="component.html?type=psu" class="hardware-spot spot-psu" data-title="منبع تغذیه (Power)" data-desc="تامین کننده انرژی حیاتی قطعات سیستم."><span><i class="fas fa-bolt"></i> Power</span></a>
+                </div>
+            </div>
+            <div class="info-panel">
+                <div class="glass-card preview-box" id="info-box">
+                    <h3 id="info-title" style="color: var(--highlight); margin-bottom: 15px;"><i class="fas fa-info-circle"></i> راهنمای انتخاب</h3>
+                    <p id="info-desc" style="line-height: 1.8; text-align: right;">نشانگر ماوس را روی قطعات رنگی ببرید.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 20px; border-top: 1px solid var(--glass-border);">
+    <p>&copy; 2585 Lets Learn Hardware. Made with ❤️ by <a href="https://github.com/arashrostammazaheri-maker" target="_blank" style="color:var(--highlight); font-weight:bold; text-decoration:none;">Arash_R.m</a></p>
+</footer>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

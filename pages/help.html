@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Learn Hardware - Help</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body style="justify-content: flex-start;">
+
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="highlight">LLH</span> <span class="text-purple">Help</span>
+            </h1>
+        </a>
+    </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
+
+<main class="main-wrapper" style="justify-content: flex-start;">
+    <div class="glass-card container" style="max-width: 800px; padding: 40px; line-height: 1.8;">
+        <h2 style="color: var(--highlight); text-align: center; margin-bottom: 30px;"><i class="fas fa-info-circle"></i> راهنمای استفاده از دانشنامه سخت‌افزار</h2>
+        <h3 style="color: var(--text-purple); margin-bottom: 12px;">۱. جعبه ابزار محاسباتی</h3>
+        <p style="text-align: justify; margin-bottom: 10px;">در این بخش می‌توانید از ابزارهای هوشمند استفاده کنید:</p>
+        
+        <ul style="text-align: justify; padding-right: 20px; margin-bottom: 20px; list-style-type: square;">
+            <li style="margin-bottom: 15px;">
+                <strong>محاسبه‌گر پاور:</strong> این ابزار به شما <strong>کمک می‌کند</strong> تا پاور مورد نیاز برای سیستم خود را انتخاب کنید.
+                <br>
+                <span style="font-size: 0.9em; opacity: 0.85;"><strong>نحوه استفاده:</strong> پردازنده و کارت گرافیک کامپیوتر خود را از منوی قطعات انتخاب کرده و سپس روی دکمه “محاسبه توان” کلیک کنید تا مقدار برق مصرفی قطعات خود و پاور پیشنهادی را مشاهده کنید.</span>
+            </li>
+            
+            <li style="margin-bottom: 15px;">
+                <strong>محاسبه‌گر گلوگاه (Bottleneck):</strong> این ابزار به شما <strong>کمک می‌کند</strong> تا پردازنده و کارت گرافیک مناسب به هم را انتخاب کنید.
+                
+                <div style="margin-top: 10px; margin-bottom: 10px;">
+                    <strong>گلوگاه (Bottleneck) چیست؟</strong>
+                    <br>
+                    گلوگاه به وضعیتی گفته می‌شود که یکی از قطعات اصلی سیستم (معمولاً پردازنده یا کارت گرافیک) نتواند با سرعت قطعه دیگر هماهنگ شود و باعث محدود شدن عملکرد کلی سیستم شود. به عنوان مثال، اگر کارت گرافیک بسیار قدرتمند باشد اما پردازنده توان کافی برای پردازش داده‌ها را نداشته باشد، بخشی از قدرت کارت گرافیک بلااستفاده خواهد ماند. هدف این ابزار بررسی میزان هماهنگی بین پردازنده و کارت گرافیک و نمایش درصد تقریبی گلوگاه است. 
+                    <br>
+                    <strong>توجه داشته باشید که مقدار بسیار کمی گلوگاه تقریباً در همه سیستم‌ها وجود دارد و حذف کامل آن عملاً امکان‌پذیر نیست، زیرا هیچ یک از قطعات به صورت اختصاصی برای یکدیگر ساخته نشده اند. هدف از انتخاب قطعات مناسب، کاهش گلوگاه و ایجاد بیشترین هماهنگی ممکن بین اجزای سیستم است.</strong> 
+                    به طور کلی، گلوگاه کمتر از ۱۰٪ مناسب و کمتر از ۵٪ ایده‌آل در نظر گرفته می‌شود. توجه داشته باشید که درصد گلوگاه تنها یک تخمین است و عملکرد واقعی سیستم به نوع نرم‌افزار، بازی و تنظیمات مورد استفاده نیز بستگی دارد.
+                </div>
+                
+                <span style="font-size: 0.9em; opacity: 0.85;"><strong>نحوه استفاده:</strong> پردازنده و کارت گرافیک کامپیوتر خود را از منوی قطعات انتخاب کرده و سپس روی دکمه “بررسی گلوگاه” کلیک کنید تا درصد گلوگاه قطعات خود را مشاهده کنید.</span>
+            </li>
+        </ul>
+
+        <h3 style="color: var(--text-orange); margin-bottom: 12px;">۲. ساختار کیس تعاملی</h3>
+        <p style="text-align: justify; margin-bottom: 20px;">
+            در این بخش، نمایی شماتیک از یک کیس کامپیوتر از زاویه جانبی نمایش داده شده است؛ مشابه نمایی که از طریق پنل شیشه‌ای در بسیاری از کیس‌های مدرن قابل مشاهده است. در این تصویر، سمت راست نمایانگر بخش جلویی کیس و سمت چپ نمایانگر بخش پشتی آن است.
+            <br><br>
+            چیدمان قطعات بر اساس موقعیت رایج آن‌ها در یک سیستم واقعی طراحی شده و شامل اجزای اصلی مورد نیاز <strong>برای کارکرد صحیح یک کامپیوتر</strong> است؛ از جمله پردازنده (CPU)، خنک‌کننده پردازنده، مادربرد، حافظه رم (RAM)، کارت گرافیک (GPU)، حافظه ذخیره‌سازی (SSD/HDD)، منبع تغذیه (Power Supply) و کیس.
+            <br><br>
+            برای آشنایی اولیه با هر قطعه، نشانگر موس را روی آن قرار دهید تا توضیح مختصری در کادر راهنما نمایش داده شود. همچنین با کلیک روی هر قطعه می‌توانید اطلاعات تخصصی‌تر و جزئیات فنی مربوط به آن را مشاهده کنید.
+        </p>
+
+        <h3 style="color: var(--text-color); margin-bottom: 12px;">۳. مجله خبری و مقالات</h3>
+        <p style="text-align: justify; margin-bottom: 20px;">جدیدترین مقالات آموزشی و خبری در بخش <strong>مجله‌ها</strong> در دسترس است. مدیر و ادمین‌ها می‌توانند با ورود به بخش "پنل مدیریت" مقالات جدید را ثبت یا مقالات موجود را حذف کنند.</p>
+        
+        <h3 style="color: var(--text-color); margin-bottom: 12px;">سخنی با شما</h3>
+        <p style="text-align: justify; margin-bottom: 15px;">
+            ما در اینجا تلاش کرده‌ایم مجموعه‌ای از ابزارها، منابع آموزشی و دانش تخصصی دنیای تکنولوژی را گرد هم بیاوریم تا مسیر یادگیری و آموزش برای شما ساده‌تر و لذت‌بخش‌تر شود.
+            <br><br>
+            این پروژه کاملاً رایگان و با هدف گسترش دانش و فرهنگ یادگیری توسعه داده شده است و استفاده از محتوای آن برای همه آزاد است.
+            <br><br>
+            هرگونه استفاده مادی و معنوی بدون اطلاع و هماهنگی پیگرد قانونی که... ندارد؛ ولی آدم خوبی باشید🙂
+        </p>
+    </div>
+</main>
+
+<footer style="text-align: center; padding: 20px; border-top: 1px solid var(--glass-border);">
+    <p>&copy; 2585 Lets Learn Hardware. Made with ❤️ by <a href="https://github.com/arashrostammazaheri-maker" target="_blank" style="color:var(--highlight); font-weight:bold; text-decoration:none;">Arash_R.m</a></p>
+</footer>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

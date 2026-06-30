@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Learn Hardware - Register</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body style="justify-content: flex-start;">
+
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="highlight">L</span>ets&nbsp;<span class="text-purple">L</span>earn&nbsp;<span class="text-orange">H</span>ardware
+            </h1>
+        </a>
+    </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
+
+<main class="main-wrapper" style="justify-content: center;">
+    <div class="glass-card container" style="max-width: 450px;">
+        <h2 style="text-align:center; color:var(--highlight); margin-bottom:20px;">ساخت حساب جدید</h2>
+        
+        <form id="register-form">
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="reg-fname" class="form-input" placeholder="نام" required>
+                <input type="text" id="reg-lname" class="form-input" placeholder="نام خانوادگی" required>
+            </div>
+            <input type="email" id="reg-email" class="form-input" placeholder="ایمیل شما..." required>
+            
+            <div class="password-wrapper" style="margin-bottom: 15px;">
+                <input type="password" class="form-input" placeholder="رمز عبور..." required>
+                <i class="fas fa-eye" onclick="togglePassword(this)"></i>
+            </div>
+            
+            <button type="submit" class="btn-primary">ثبت نام</button>
+        </form>
+        <p style="text-align:center; margin-top:20px; font-size:0.9rem;">
+             قبلاً ثبت‌نام کرده‌اید؟ <a href="login.html" style="color:var(--highlight);">وارد شوید</a>
+        </p>
+    </div>
+</main>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/script.js"></script>
+<script>
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert("ثبت‌نام دمو با موفقیت انجام شد. لطفاً وارد شوید.");
+        window.location.href = 'login.html';
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Learn Hardware - Tools</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body style="justify-content: flex-start;">
+
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="text-purple">LLH</span> <span class="text-orange">Tools</span>
+            </h1>
+        </a>
+    </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
+
+<main class="main-wrapper" style="justify-content: flex-start;">
+    <section class="container" style="max-width: 900px;">
+        <h2 style="text-align:center; color: var(--highlight); margin-bottom: 30px;">ابزارهای هوشمند</h2>
+        <div class="tools-grid">
+            <div class="tool-card glass-card">
+                <h3 style="margin-bottom: 15px;"><i class="fas fa-bolt"></i> محاسبه‌گر پاور</h3>
+                <div class="form-group"><label>پردازنده:</label><select id="pw-cpu" class="form-input" style="margin:0;">
+                    <option value="" disabled selected>قطعه مورد نظر را انتخاب کنید</option>
+                    <optgroup label="Intel - نسل 14 و Core Ultra">
+                        <option value="181">Intel Core i5-14600K</option>
+                        <option value="253">Intel Core i7-14700K</option>
+                        <option value="253">Intel Core i9-14900K</option>
+                        <option value="320">Intel Core i9-14900KS</option>
+                        <option value="159">Intel Core Ultra 5 245K</option>
+                        <option value="250">Intel Core Ultra 7 265K</option>
+                        <option value="250">Intel Core Ultra 9 285K</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen - سری 7000 و 9000">
+                        <option value="105">AMD Ryzen 5 7600X</option>
+                        <option value="105">AMD Ryzen 7 7700X</option>
+                        <option value="120">AMD Ryzen 7 7800X3D</option>
+                        <option value="105">AMD Ryzen 7 9700X</option>
+                        <option value="120">AMD Ryzen 7 9800X3D</option>
+                        <option value="162">AMD Ryzen 9 9900X</option>
+                        <option value="200">AMD Ryzen 9 9950X</option>
+                    </optgroup>
+                </select></div>
+                <div class="form-group"><label>کارت گرافیک:</label><select id="pw-gpu" class="form-input" style="margin:0;">
+                    <option value="" disabled selected>قطعه مورد نظر را انتخاب کنید</option>
+                    <optgroup label="NVIDIA GeForce - سری 40 و 50">
+                        <option value="115">NVIDIA RTX 4060</option>
+                        <option value="220">NVIDIA RTX 4070 Super</option>
+                        <option value="285">NVIDIA RTX 4070 Ti Super</option>
+                        <option value="320">NVIDIA RTX 4080 Super</option>
+                        <option value="450">NVIDIA RTX 4090</option>
+                        <option value="115">NVIDIA RTX 5050</option>
+                        <option value="150">NVIDIA RTX 5060</option>
+                        <option value="250">NVIDIA RTX 5070</option>
+                        <option value="400">NVIDIA RTX 5080</option>
+                        <option value="600">NVIDIA RTX 5090</option>
+                    </optgroup>
+                    <optgroup label="AMD Radeon - سری 7000 و 9000">
+                        <option value="190">AMD Radeon RX 7600 XT</option>
+                        <option value="263">AMD Radeon RX 7800 XT</option>
+                        <option value="315">AMD Radeon RX 7900 XT</option>
+                        <option value="355">AMD Radeon RX 7900 XTX</option>
+                        <option value="200">AMD Radeon RX 9060 XT</option>
+                        <option value="250">AMD Radeon RX 9070</option>
+                        <option value="300">AMD Radeon RX 9070 XT</option>
+                    </optgroup>
+                </select></div>
+                <button onclick="calculatePower()" class="btn-secondary" style="margin-top:5px;">محاسبه توان</button>
+                <div id="pw-result" class="result-box hidden"></div>
+            </div>
+            
+            <div class="tool-card glass-card">
+                <h3 style="margin-bottom: 15px;"><i class="fas fa-tachometer-alt"></i> تست گلوگاه</h3>
+                <div class="form-group"><label>پردازنده:</label><select id="bn-cpu" class="form-input" style="margin:0;">
+                    <option value="" disabled selected>قطعه مورد نظر را انتخاب کنید</option>
+                    <optgroup label="Intel - نسل 14 و Core Ultra">
+                        <option value="85">Intel Core i5-14600K</option>
+                        <option value="92">Intel Core i7-14700K</option>
+                        <option value="98">Intel Core i9-14900K</option>
+                        <option value="100">Intel Core i9-14900KS</option>
+                        <option value="88">Intel Core Ultra 5 245K</option>
+                        <option value="94">Intel Core Ultra 7 265K</option>
+                        <option value="102">Intel Core Ultra 9 285K</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen - سری 7000 و 9000">
+                        <option value="80">AMD Ryzen 5 7600X</option>
+                        <option value="86">AMD Ryzen 7 7700X</option>
+                        <option value="97">AMD Ryzen 7 7800X3D</option>
+                        <option value="93">AMD Ryzen 7 9700X</option>
+                        <option value="105">AMD Ryzen 7 9800X3D</option>
+                        <option value="96">AMD Ryzen 9 9900X</option>
+                        <option value="100">AMD Ryzen 9 9950X</option>
+                    </optgroup>
+                </select></div>
+                
+                <div class="form-group"><label>گرافیک:</label><select id="bn-gpu" class="form-input" style="margin:0;">
+                    <option value="" disabled selected>قطعه مورد نظر را انتخاب کنید</option>
+                    <optgroup label="NVIDIA GeForce - سری 40 و 50">
+                        <option value="50">NVIDIA RTX 4060</option>
+                        <option value="70">NVIDIA RTX 4070 Super</option>
+                        <option value="78">NVIDIA RTX 4070 Ti Super</option>
+                        <option value="88">NVIDIA RTX 4080 Super</option>
+                        <option value="98">NVIDIA RTX 4090</option>
+                        <option value="85">NVIDIA RTX 5050</option>
+                        <option value="85">NVIDIA RTX 5060</option>
+                        <option value="85">NVIDIA RTX 5070</option>
+                        <option value="102">NVIDIA RTX 5080</option>
+                        <option value="115">NVIDIA RTX 5090</option>
+                    </optgroup>
+                    <optgroup label="AMD Radeon - سری 7000 و 9000">
+                        <option value="48">AMD Radeon RX 7600 XT</option>
+                        <option value="68">AMD Radeon RX 7800 XT</option>
+                        <option value="82">AMD Radeon RX 7900 XT</option>
+                        <option value="90">AMD Radeon RX 7900 XTX</option>
+                        <option value="86">AMD Radeon RX 9060 XT</option>
+                        <option value="86">AMD Radeon RX 9070</option>
+                        <option value="86">AMD Radeon RX 9070 XT</option>
+                    </optgroup>
+                </select></div>
+                <button onclick="calculateBottleneck()" class="btn-secondary" style="margin-top:5px;">بررسی گلوگاه</button>
+                <div class="progress-wrapper hidden" id="bn-result">
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" id="bn-bar"></div></div>
+                    <p id="bn-text" style="font-weight:bold;">درصد گلوگاه: 0%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="text-align: center; padding: 20px; border-top: 1px solid var(--glass-border);">
+    <p>&copy; 2585 Lets Learn Hardware. Made with ❤️ by <a href="https://github.com/arashrostammazaheri-maker" target="_blank" style="color:var(--highlight); font-weight:bold; text-decoration:none;">Arash_R.m</a></p>
+</footer>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

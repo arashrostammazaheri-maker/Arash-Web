@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Learn Hardware - Admin Panel</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body style="justify-content: flex-start;">
+
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="highlight">LLH</span> <span class="text-purple">Admin</span>
+            </h1>
+        </a>
+    </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
+
+<main class="main-wrapper" style="justify-content: flex-start;">
+    
+    <div id="admin-login-view" class="glass-card container hidden" style="max-width: 450px; text-align: center;">
+        <h2 style="color:var(--highlight); margin-bottom: 20px;">ورود به پنل مدیریت</h2>
+        <p style="font-size: 0.9rem; line-height: 1.8; color: var(--secondary-color); margin-bottom: 20px; text-align: justify; background: rgba(0,0,0,0.1); padding: 15px; border-radius: 8px;">
+    رمز عبور فقط یکبار از شما خواسته می‌شود و سپس حساب کاربری شما به عنوان ادمین ثبت می‌شود. توجه داشته باشید که در صورت عدم فعالیت یا زیر پا گذاشتن قوانین هنگام انتشار محتوا در سایت، حساب شما به حالت عادی باز خواهد گشت. سپاس از همراهی شما
+        </p>
+        <p id="admin-err" style="color:#ff6b6b; margin-bottom:15px;"></p>
+        <form id="admin-auth-form">
+            <div class="password-wrapper" style="margin-bottom:20px;">
+                <input type="password" id="admin-pass" class="form-input" placeholder="رمز عبور ادمین" required>
+                <i class="fas fa-eye" onclick="togglePassword(this)"></i>
+            </div>
+            <button type="submit" class="btn-primary">بررسی</button>
+        </form>
+    </div>
+
+    <div id="admin-panel-view" class="container hidden" style="display:flex; flex-direction:column; gap:30px; width:100%; max-width:800px;">
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--highlight);"><i class="fas fa-plus"></i> افزودن مقاله جدید</h3>
+            <form id="add-article-form">
+                <input type="text" id="art-title" class="form-input" placeholder="عنوان مقاله" required>
+                <input type="text" id="art-img" class="form-input" placeholder="لینک تصویر (URL)" required>
+                <input type="text" id="art-desc" class="form-input" placeholder="توضیح کوتاه روی کارت" required>
+                <textarea id="art-content" class="form-input" rows="5" placeholder="متن کامل..." required></textarea>
+                <button type="submit" class="btn-primary">انتشار محتوا</button>
+            </form>
+        </div>
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--highlight);"><i class="fas fa-list"></i> مدیریت مقالات</h3>
+            <div id="admin-articles-list"></div>
+        </div>
+    </div>
+
+</main>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/script.js"></script>
+<script>
+    requireAuth();
+
+    function renderAdminPanel() {
+        const isAdmin = localStorage.getItem('llh_is_admin');
+        const loginView = document.getElementById('admin-login-view');
+        const panelView = document.getElementById('admin-panel-view');
+
+        if(isAdmin === 'true') {
+            loginView.classList.add('hidden');
+            panelView.classList.remove('hidden');
+            renderArticlesList();
+        } else {
+            loginView.classList.remove('hidden');
+            panelView.classList.add('hidden');
+        }
+    }
+
+    function renderArticlesList() {
+        const articles = JSON.parse(localStorage.getItem('llh_articles')) || [];
+        const listDiv = document.getElementById('admin-articles-list');
+        listDiv.innerHTML = articles.map(a => `
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
+                <span>${a.title}</span>
+                <button onclick="deleteArticle(${a.id})" class="btn-secondary" style="width:auto; margin:0; background:#e74c3c; padding:6px 12px; border:none; cursor:pointer;">حذف</button>
+            </div>
+        `).join('');
+    }
+
+    document.getElementById('admin-auth-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const pass = document.getElementById('admin-pass').value;
+        // Admin Password
+        if(pass === "LLHAdmin2026") {
+            localStorage.setItem('llh_is_admin', 'true');
+            renderAdminPanel();
+        } else {
+            document.getElementById('admin-err').innerText = "رمز عبور ادمین نادرست است!";
+        }
+    });
+
+    document.getElementById('add-article-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const articles = JSON.parse(localStorage.getItem('llh_articles')) || [];
+        const newArt = {
+            id: Date.now(),
+            title: document.getElementById('art-title').value,
+            image: document.getElementById('art-img').value,
+            desc: document.getElementById('art-desc').value,
+            content: document.getElementById('art-content').value,
+            author: localStorage.getItem('llh_user_name') || 'ادمین',
+            date: "امروز"
+        };
+        articles.unshift(newArt);
+        localStorage.setItem('llh_articles', JSON.stringify(articles));
+        document.getElementById('add-article-form').reset();
+        renderArticlesList();
+        alert('مقاله اضافه شد!');
+    });
+
+    window.deleteArticle = function(id) {
+        let articles = JSON.parse(localStorage.getItem('llh_articles')) || [];
+        articles = articles.filter(a => a.id !== id);
+        localStorage.setItem('llh_articles', JSON.stringify(articles));
+        renderArticlesList();
+    };
+
+    document.addEventListener('DOMContentLoaded', renderAdminPanel);
+</script>
+</body>
+</html>

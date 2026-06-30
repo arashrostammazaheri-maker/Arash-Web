@@ -1,0 +1,101 @@
+/* Scrollbar Layout Shift Fix:
+   scrollbar-gutter: stable reserves scrollbar space even when no scrollbar is visible.
+   both-edges reserves space on BOTH sides for RTL/LTR compatibility (Chrome vs Firefox). */
+html {
+    scrollbar-gutter: stable both-edges;
+}
+
+:root {
+    --bg-color: #f0f2f5; --text-color: #333;
+    --glass-bg: rgba(255, 255, 255, 0.75); --glass-border: rgba(255, 255, 255, 0.6);
+    --primary-color: #007bff; --secondary-color: #6c757d; --accent-color: #ff9f43; --highlight: #007bff;
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+.dark-mode {
+    --bg-color: #121212; --text-color: #e0e0e0;
+    --glass-bg: rgba(30, 30, 30, 0.85); --glass-border: rgba(255, 255, 255, 0.1);
+    --primary-color: #0d6efd; --secondary-color: #adb5bd; --accent-color: #ffca28; --highlight: #00d2d3;
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; transition: background-color 0.3s, color 0.3s; }
+body { background: var(--bg-color); background-image: radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(255, 159, 67, 0.1) 0%, transparent 20%); background-attachment: fixed; color: var(--text-color); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Header Fix */
+.glass-header { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    width: 100% !important; 
+    box-sizing: border-box !important; 
+    padding: 15px 30px !important; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    background: var(--glass-bg); 
+    backdrop-filter: blur(15px); 
+    border-bottom: 1px solid var(--glass-border); 
+    height: 70px; 
+}
+.logo-area { 
+    position: absolute !important; 
+    left: 50% !important; 
+    transform: translateX(-50%) !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    gap: 12px !important; 
+}
+.logo-area a { text-decoration: none; color: inherit; display: flex; align-items: center; }
+.menu-container { display: flex !important; align-items: center !important; justify-content: flex-end !important; }
+.brand-name { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 6px; margin: 0; }
+.site-logo { height: 40px; width: auto; }
+
+.text-purple { color: #9b59b6 !important; } .text-orange { color: #e67e22 !important; font-weight: 800; } .highlight { color: #38bdf8 !important; }
+
+/* Menu */
+.nav-menu { position: absolute; top: 60px; left: 0; background: var(--glass-bg); backdrop-filter: blur(20px); padding: 20px; border-radius: 10px; border: 1px solid var(--glass-border); width: 200px; box-shadow: var(--card-shadow); display: none; }
+.show-menu { display: block; animation: slideIn 0.3s ease; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.nav-menu ul { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+.nav-menu a { text-decoration: none; color: var(--text-color); font-weight: bold; display: block; }
+
+/* Buttons & Inputs */
+.btn-icon { background: transparent; border: none; color: var(--text-color); font-size: 1.4rem; cursor: pointer; }
+.btn-primary, .btn-secondary { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white; width: 100%; margin-top: 15px; text-align: center; display: inline-block; text-decoration: none; }
+.btn-primary { background: var(--primary-color); } .btn-secondary { background: var(--secondary-color); }
+.form-input { width: 100%; padding: 12px; margin: 8px 0 18px 0; border-radius: 10px; border: 2px solid rgba(56, 189, 248, 0.4); background: rgba(255, 255, 255, 0.07); color: inherit; }
+.dark-mode .form-input { background: rgba(0, 0, 0, 0.2); border-color: rgba(56, 189, 248, 0.3); }
+
+/* Password Wrapper */
+.password-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
+.password-wrapper input { padding-left: 45px; margin-bottom: 0; }
+.password-wrapper i { position: absolute; left: 15px; color: var(--secondary-color); cursor: pointer; font-size: 1.2rem; }
+
+/* Layouts */
+.main-wrapper { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; gap: 40px; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; }
+.glass-card { background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; box-shadow: var(--card-shadow); padding: 30px; transition: transform 0.3s; }
+.tools-grid, .articles-grid, .entry-buttons { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; width: 100%; }
+.entry-card { flex: 1; min-width: 280px; max-width: 400px; text-align: center; }
+.tool-card { flex: 1; min-width: 300px; max-width: 450px; }
+
+/* Hardware Case */
+.hardware-layout { display: flex; gap: 30px; flex-wrap: wrap; width: 100%; justify-content: center; }
+.case-wrapper { flex: 1.2; min-width: 320px; max-width: 600px; position: relative; height: 550px; display: flex; justify-content: center; align-items: center;}
+.pc-case-mock { position: relative; width: 100%; height: 100%; background: #a4b0be; border: 3px solid #747d8c; border-radius: 12px; box-shadow: inset 0 0 25px rgba(0,0,0,0.3); overflow: hidden; }
+.dark-mode .pc-case-mock { background: #2f3542; border-color: #57606f; }
+.hardware-spot { position: absolute; display: flex; flex-direction: column; justify-content: center; align-items: center; text-decoration: none; color: #2d3436; font-weight: bold; transition: 0.3s; box-shadow: 2px 4px 12px rgba(0,0,0,0.25); border-radius: 6px; }
+.spot-mobo { width: 85%; height: 65%; top: 6%; left: 7%; background: #c8f7c5; border: 2px solid #78e08f; z-index: 1; justify-content: flex-start; padding: 12px; }
+.spot-cpu { width: 28%; height: 28%; top: 15%; left: 22%; background: #ffb86c; border: 2px solid #e17055; z-index: 2;}
+.spot-ram { width: 10%; height: 35%; top: 12%; left: 56%; background: #63cdda; border: 2px solid #0abde3; z-index: 2;}
+.spot-ssd { width: 35%; height: 7%; top: 48%; left: 22%; background: #ff7675; border: 2px solid #d63031; color: white; z-index: 2;}
+.spot-gpu { width: 75%; height: 14%; top: 52%; left: 12%; background: #cd84f1; border: 2px solid #9b59b6; color: white; z-index: 3;}
+.spot-psu { width: 45%; height: 18%; bottom: 4%; left: 7%; background: #f1c40f; border: 2px solid #f39c12; z-index: 1;}
+.info-panel { flex: 0.8; min-width: 280px; max-width: 400px; }
+
+/* Utilities */
+.hidden { display: none !important; }
+.result-box { margin-top: 15px; text-align: center; font-weight: bold; }
+.progress-wrapper { margin-top: 20px; text-align: center; }
+.progress-bar-bg { width: 100%; height: 10px; background: rgba(0,0,0,0.1); border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
+.dark-mode .progress-bar-bg { background: rgba(255,255,255,0.1); }
+.progress-bar-fill { height: 100%; width: 0%; transition: width 1s ease-in-out, background 0.5s; }

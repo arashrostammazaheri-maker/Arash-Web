@@ -2,73 +2,64 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark-mode");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lets Learn Hardware</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lets Learn Hardware - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 </head>
 <body>
 
-    <header class="glass-header">
-        <button id="theme-toggle" class="btn-icon">
-            <i class="fas fa-moon"></i>
-        </button>
-
-        <div class="logo-area">
-            <img src="logo.png" alt="Logo" class="site-logo">
-            <h1 class="brand-name"><span class="highlight">L</span>ets <span class="highlight">L</span>earn <span class="highlight">H</span>ardware</h1>
-        </div>
-
-        <div class="menu-container">
-            <button id="menu-btn" class="btn-icon">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="navbar" class="nav-menu hidden-menu">
-                <ul>
-                    <li><a href="index.html">خانه</a></li>
-                    <li><a href="tools.html">ابزارها</a></li>
-                    <li><a href="articles.html">مقالات</a></li>
-                    <li><a href="admin.html" class="admin-link">پنل ادمین</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="main-wrapper">
-        <section class="hero-section">
-            <div class="hero-content glass-card">
-                <h2>دنیای سخت‌افزار در مشت شما</h2>
-                <p class="tagline">معتبر ترین و بروز ترین منبع آموزش و اخبار تکنولوژی</p>
-                <p class="description">
-                    به تخصصی‌ترین مرجع سخت‌افزار خوش آمدید. از اینجا می‌توانید به ابزارهای محاسباتی دقیق دسترسی داشته باشید یا جدیدترین مقالات دنیای تکنولوژی را مطالعه کنید.
-                </p>
-                <p>امتحانش کن!</p>
-            </div>
-        </section>
-
-        <section class="entry-buttons container">
-            <div class="glass-card entry-card">
-                <i class="fas fa-tools icon-large"></i>
-                <h3>جعبه ابزار</h3>
-                <p>محاسبه گر پاور، تست گلوگاه و ابزارهای کاربردی</p>
-                <a href="tools.html" class="btn-primary">ورود به ابزارها</a>
-            </div>
-
-            <div class="glass-card entry-card">
-                <i class="fas fa-newspaper icon-large"></i>
-                <h3>مجله خبری</h3>
-                <p>بررسی تخصصی قطعات، اخبار و راهنمای خرید</p>
-                <a href="articles.html" class="btn-secondary">ورود به مقالات</a>
-            </div>
-        </section>
+<header class="glass-header">
+    <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+    <div class="logo-area" dir="ltr">
+        <a href="index.html">
+            <img src="assets/img/logo.png" alt="LLH Logo" class="site-logo">
+            <h1 class="brand-name" style="margin: 0; padding-left: 8px; display: block;">
+                <span class="highlight">L</span>ets&nbsp;<span class="text-purple">L</span>earn&nbsp;<span class="text-orange">H</span>ardware
+            </h1>
+        </a>
     </div>
+    
+    <div class="menu-container">
+    <button id="menu-btn" class="btn-icon"><i class="fas fa-bars"></i></button>
+    <nav id="navbar" class="nav-menu hidden-menu"></nav>
+</div>
+</header>
 
-    <footer>
-        <p>&copy; 2026 Lets Learn Hardware. All Rights Reserved.</p>
-        <p>Created by <span class="creator">Arash_R.m✨</span></p>
-    </footer>
+<main class="main-wrapper">
+    <section class="hero-section">
+        <div class="hero-content glass-card" style="text-align: center;">
+            <h2>دنیای سخت‌افزار در مشت شما</h2>
+            <p style="color: var(--highlight); font-weight: bold; margin-top: 10px;">معتبرترین و بروزترین منبع آموزش تکنولوژی</p>
+            <p style="margin-top: 15px; opacity: 0.9;">به Lets Learn Hardware خوش آمدید. در اینجا می‌توانید به ابزارهای محاسباتی دقیق دسترسی داشته باشید، قطعات سخت افزاری کامپیوتر را یاد بگیرید یا جدیدترین مقالات دنیای تکنولوژی را مطالعه کنید. کافیه از کادر زیر امتحانش کنید!</p>
+        </div>
+    </section>
+    <section class="entry-buttons container">
+        <div class="glass-card entry-card">
+            <i class="fas fa-tools icon-large"></i>
+            <h3>جعبه ابزار</h3>
+            <a href="pages/tools.html" class="btn-primary">ورود به ابزارها</a>
+        </div>
+        <div class="glass-card entry-card">
+            <i class="fas fa-desktop icon-large"></i>
+            <h3>کیس تعاملی</h3>
+            <a href="pages/hardware.html" class="btn-primary">مشاهده قطعات</a>
+        </div>
+        <div class="glass-card entry-card">
+            <i class="fas fa-newspaper icon-large"></i>
+            <h3>مجله خبری</h3>
+            <a href="pages/articles.html" class="btn-primary">ورود به مقالات</a>
+        </div>
+    </section>
+</main>
 
-    <script src="script.js"></script>
+<footer style="text-align: center; padding: 20px; border-top: 1px solid var(--glass-border);">
+    <p>&copy; 2026 Lets Learn Hardware . Created by <a href="https://github.com/arashrostammazaheri-maker" target="_blank" style="color:var(--highlight); font-weight:bold; text-decoration:none;">Arash_R.m✨</a>. All Rights Reserved</p>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
