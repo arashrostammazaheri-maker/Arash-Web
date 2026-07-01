@@ -2,7 +2,7 @@
 
 
 
-An interactive, RTL (Persian) educational website that teaches computer hardware concepts through an interactive PC case explorer, dynamic articles, and smart calculators. This is a static port of the PHP Edition v2.0, built with Vanilla HTML, CSS, and JavaScript — designed specifically to run on GitHub Pages without requiring a server.
+An interactive, RTL educational website that teaches computer hardware concepts through an interactive PC case explorer, dynamic articles, and smart calculators. This is a static port of the PHP Edition v2.0, built with Vanilla HTML, CSS, and JavaScript — designed specifically to run on GitHub Pages without requiring a server.
 
 
 
