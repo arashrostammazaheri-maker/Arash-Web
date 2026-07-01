@@ -10,7 +10,7 @@ An interactive, RTL (Persian) educational website that teaches computer hardware
 
 
 
-[View Live Demo](https://arashrostammazaheri-maker.github.io/Arash-Web/)
+Click [here](https://arashrostammazaheri-maker.github.io/Arash-Web/) to view the site.
 
 
 
