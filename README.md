@@ -27,7 +27,7 @@ This project evolved through several stages during its development:
 - **Security:** Bcrypt Hashing, Apache Configuration (`.htaccess`)
 
 ## How to Run Locally
-1. Download and install [XAMPP](https://www.apachefriends.org/).
+1. Download and install [XAMPP](https://www.apachefriends.org/)
 2. Clone or download this repository into your `htdocs` directory.
 3. Start the **Apache** server from the XAMPP Control Panel.
-4. Open your browser and navigate to `http://localhost/Let's Learn Hardware PHP Edition-Updated To V 2.0/`.
+4. Open your browser and navigate to `http://localhost/Let's Learn Hardware PHP Edition-Updated To V 2.0/`
