@@ -11,7 +11,9 @@ You can check out the static version of this project here: [View Live Demo](http
 This project evolved through several stages during its development:
 
 - **HTML Edition v1.0** – Initial static prototype.
+- 
 - **PHP Edition v2.0** – Major redesign with dynamic content, authentication system, interactive tools, and UI improvements.
+- 
 - **HTML Edition v2.0** – A static port of the PHP Edition created specifically for GitHub Pages, preserving the user experience without requiring a PHP server.
 
 ## Features
